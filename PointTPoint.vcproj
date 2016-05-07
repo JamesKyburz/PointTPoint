@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding = "Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="7.00"
+	Name="PointTPoint"
+	SccProjectName="SAK"
+	SccAuxPath="SAK"
+	SccLocalPath="SAK"
+	SccProvider="SAK"
+	Keyword="AtlProj">
+	<Platforms>
+		<Platform
+			Name="Win32"/>
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="Unicode Release MinSize|Win32"
+			OutputDirectory=".\ReleaseUMinSize"
+			IntermediateDirectory=".\ReleaseUMinSize"
+			ConfigurationType="2"
+			UseOfMFC="0"
+			UseOfATL="2"
+			ATLMinimizesCRunTimeLibraryUsage="TRUE"
+			CharacterSet="1">
+			<Tool
+				Name="VCCLCompilerTool"
+				InlineFunctionExpansion="1"
+				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL"
+				StringPooling="TRUE"
+				RuntimeLibrary="0"
+				EnableFunctionLevelLinking="TRUE"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="stdafx.h"
+				PrecompiledHeaderFile=".\ReleaseUMinSize/PointTPoint.pch"
+				AssemblerListingLocation=".\ReleaseUMinSize/"
+				ObjectFile=".\ReleaseUMinSize/"
+				ProgramDataBaseFileName=".\ReleaseUMinSize/"
+				WarningLevel="3"
+				SuppressStartupBanner="TRUE"/>
+			<Tool
+				Name="VCCustomBuildTool"
+				Description="Performing registration"
+				CommandLine="if &quot;%OS%&quot;==&quot;&quot; goto NOTNT
+if not &quot;%OS%&quot;==&quot;Windows_NT&quot; goto NOTNT
+regsvr32 /s /c &quot;$(TargetPath)&quot;
+echo regsvr32 exec. time &gt; &quot;$(OutDir)\regsvr32.trg&quot;
+goto end
+:NOTNT
+echo Warning : Cannot register Unicode DLL on Windows 95
+:end
+"
+				Outputs="$(OutDir)\regsvr32.trg"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions="/MACHINE:I386"
+				AdditionalDependencies="odbc32.lib odbccp32.lib"
+				OutputFile=".\ReleaseUMinSize/PointTPoint.dll"
+				LinkIncremental="1"
+				SuppressStartupBanner="TRUE"
+				ModuleDefinitionFile=".\PointTPoint.def"
+				ProgramDatabaseFile=".\ReleaseUMinSize/PointTPoint.pdb"
+				SubSystem="2"
+				ImportLibrary=".\ReleaseUMinSize/PointTPoint.lib"/>
+			<Tool
+				Name="VCMIDLTool"
+				TypeLibraryName=".\ReleaseUMinSize/PointTPoint.tlb"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="NDEBUG"
+				Culture="1053"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+		</Configuration>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory=".\Debug"
+			IntermediateDirectory=".\Debug"
+			ConfigurationType="2"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-DFD_SETSIZE=1024"
+				Optimization="0"
+				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL"
+				BasicRuntimeChecks="3"
+				RuntimeLibrary="1"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="stdafx.h"
+				PrecompiledHeaderFile=".\Debug/PointTPoint.pch"
+				AssemblerListingLocation=".\Debug/"
+				ObjectFile=".\Debug/"
+				ProgramDataBaseFileName=".\Debug/"
+				WarningLevel="3"
+				SuppressStartupBanner="TRUE"
+				DebugInformationFormat="4"/>
+			<Tool
+				Name="VCCustomBuildTool"
+				Description="Performing registration"
+				CommandLine="regsvr32 /s /c &quot;$(TargetPath)&quot;
+echo regsvr32 exec. time &gt; &quot;$(OutDir)\regsvr32.trg&quot;
+"
+				Outputs="$(OutDir)\regsvr32.trg"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions="wsock32.lib /MACHINE:I386"
+				AdditionalDependencies="odbc32.lib odbccp32.lib"
+				OutputFile=".\Debug/PointTPoint.dll"
+				LinkIncremental="2"
+				SuppressStartupBanner="TRUE"
+				ModuleDefinitionFile=".\PointTPoint.def"
+				GenerateDebugInformation="TRUE"
+				ProgramDatabaseFile=".\Debug/PointTPoint.pdb"
+				SubSystem="2"
+				ImportLibrary=".\Debug/PointTPoint.lib"/>
+			<Tool
+				Name="VCMIDLTool"
+				TypeLibraryName=".\Debug/PointTPoint.tlb"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_DEBUG"
+				Culture="1053"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+		</Configuration>
+		<Configuration
+			Name="Release MinSize|Win32"
+			OutputDirectory=".\ReleaseMinSize"
+			IntermediateDirectory=".\ReleaseMinSize"
+			ConfigurationType="2"
+			UseOfMFC="0"
+			UseOfATL="2"
+			ATLMinimizesCRunTimeLibraryUsage="TRUE"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				InlineFunctionExpansion="1"
+				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL"
+				StringPooling="TRUE"
+				RuntimeLibrary="0"
+				EnableFunctionLevelLinking="TRUE"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="stdafx.h"
+				PrecompiledHeaderFile=".\ReleaseMinSize/PointTPoint.pch"
+				AssemblerListingLocation=".\ReleaseMinSize/"
+				ObjectFile=".\ReleaseMinSize/"
+				ProgramDataBaseFileName=".\ReleaseMinSize/"
+				WarningLevel="3"
+				SuppressStartupBanner="TRUE"/>
+			<Tool
+				Name="VCCustomBuildTool"
+				Description="Performing registration"
+				CommandLine="regsvr32 /s /c &quot;$(TargetPath)&quot;
+echo regsvr32 exec. time &gt; &quot;$(OutDir)\regsvr32.trg&quot;
+"
+				Outputs="$(OutDir)\regsvr32.trg"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions="/MACHINE:I386"
+				AdditionalDependencies="odbc32.lib odbccp32.lib"
+				OutputFile=".\ReleaseMinSize/PointTPoint.dll"
+				LinkIncremental="1"
+				SuppressStartupBanner="TRUE"
+				ModuleDefinitionFile=".\PointTPoint.def"
+				ProgramDatabaseFile=".\ReleaseMinSize/PointTPoint.pdb"
+				SubSystem="2"
+				ImportLibrary=".\ReleaseMinSize/PointTPoint.lib"/>
+			<Tool
+				Name="VCMIDLTool"
+				TypeLibraryName=".\ReleaseMinSize/PointTPoint.tlb"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="NDEBUG"
+				Culture="1053"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+		</Configuration>
+		<Configuration
+			Name="Unicode Release MinDependency|Win32"
+			OutputDirectory=".\ReleaseUMinDependency"
+			IntermediateDirectory=".\ReleaseUMinDependency"
+			ConfigurationType="2"
+			UseOfMFC="0"
+			UseOfATL="1"
+			ATLMinimizesCRunTimeLibraryUsage="TRUE"
+			CharacterSet="1">
+			<Tool
+				Name="VCCLCompilerTool"
+				InlineFunctionExpansion="1"
+				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL"
+				StringPooling="TRUE"
+				RuntimeLibrary="0"
+				EnableFunctionLevelLinking="TRUE"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="stdafx.h"
+				PrecompiledHeaderFile=".\ReleaseUMinDependency/PointTPoint.pch"
+				AssemblerListingLocation=".\ReleaseUMinDependency/"
+				ObjectFile=".\ReleaseUMinDependency/"
+				ProgramDataBaseFileName=".\ReleaseUMinDependency/"
+				WarningLevel="3"
+				SuppressStartupBanner="TRUE"/>
+			<Tool
+				Name="VCCustomBuildTool"
+				Description="Performing registration"
+				CommandLine="if &quot;%OS%&quot;==&quot;&quot; goto NOTNT
+if not &quot;%OS%&quot;==&quot;Windows_NT&quot; goto NOTNT
+regsvr32 /s /c &quot;$(TargetPath)&quot;
+echo regsvr32 exec. time &gt; &quot;$(OutDir)\regsvr32.trg&quot;
+goto end
+:NOTNT
+echo Warning : Cannot register Unicode DLL on Windows 95
+:end
+"
+				Outputs="$(OutDir)\regsvr32.trg"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions="/MACHINE:I386"
+				AdditionalDependencies="odbc32.lib odbccp32.lib"
+				OutputFile=".\ReleaseUMinDependency/PointTPoint.dll"
+				LinkIncremental="1"
+				SuppressStartupBanner="TRUE"
+				ModuleDefinitionFile=".\PointTPoint.def"
+				ProgramDatabaseFile=".\ReleaseUMinDependency/PointTPoint.pdb"
+				SubSystem="2"
+				ImportLibrary=".\ReleaseUMinDependency/PointTPoint.lib"/>
+			<Tool
+				Name="VCMIDLTool"
+				TypeLibraryName=".\ReleaseUMinDependency/PointTPoint.tlb"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="NDEBUG"
+				Culture="1053"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+		</Configuration>
+		<Configuration
+			Name="Unicode Debug|Win32"
+			OutputDirectory=".\DebugU"
+			IntermediateDirectory=".\DebugU"
+			ConfigurationType="2"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE"
+			CharacterSet="1">
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="0"
+				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL"
+				BasicRuntimeChecks="3"
+				RuntimeLibrary="1"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="stdafx.h"
+				PrecompiledHeaderFile=".\DebugU/PointTPoint.pch"
+				AssemblerListingLocation=".\DebugU/"
+				ObjectFile=".\DebugU/"
+				ProgramDataBaseFileName=".\DebugU/"
+				WarningLevel="3"
+				SuppressStartupBanner="TRUE"
+				DebugInformationFormat="4"/>
+			<Tool
+				Name="VCCustomBuildTool"
+				Description="Performing registration"
+				CommandLine="if &quot;%OS%&quot;==&quot;&quot; goto NOTNT
+if not &quot;%OS%&quot;==&quot;Windows_NT&quot; goto NOTNT
+regsvr32 /s /c &quot;$(TargetPath)&quot;
+echo regsvr32 exec. time &gt; &quot;$(OutDir)\regsvr32.trg&quot;
+goto end
+:NOTNT
+echo Warning : Cannot register Unicode DLL on Windows 95
+:end
+"
+				Outputs="$(OutDir)\regsvr32.trg"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions="/MACHINE:I386"
+				AdditionalDependencies="odbc32.lib odbccp32.lib"
+				OutputFile=".\DebugU/PointTPoint.dll"
+				LinkIncremental="2"
+				SuppressStartupBanner="TRUE"
+				ModuleDefinitionFile=".\PointTPoint.def"
+				GenerateDebugInformation="TRUE"
+				ProgramDatabaseFile=".\DebugU/PointTPoint.pdb"
+				SubSystem="2"
+				ImportLibrary=".\DebugU/PointTPoint.lib"/>
+			<Tool
+				Name="VCMIDLTool"
+				TypeLibraryName=".\DebugU/PointTPoint.tlb"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_DEBUG"
+				Culture="1053"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+		</Configuration>
+		<Configuration
+			Name="Release MinDependency|Win32"
+			OutputDirectory=".\ReleaseMinDependency"
+			IntermediateDirectory=".\ReleaseMinDependency"
+			ConfigurationType="2"
+			UseOfMFC="0"
+			UseOfATL="1"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-DFD_SETSIZE=1024
+"
+				Optimization="1"
+				InlineFunctionExpansion="1"
+				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL"
+				StringPooling="TRUE"
+				RuntimeLibrary="0"
+				EnableFunctionLevelLinking="TRUE"
+				UsePrecompiledHeader="3"
+				PrecompiledHeaderThrough="stdafx.h"
+				PrecompiledHeaderFile=".\ReleaseMinDependency/PointTPoint.pch"
+				AssemblerOutput="2"
+				AssemblerListingLocation=".\ReleaseMinDependency/"
+				ObjectFile=".\ReleaseMinDependency/"
+				ProgramDataBaseFileName=".\ReleaseMinDependency/"
+				WarningLevel="3"
+				SuppressStartupBanner="TRUE"
+				Detect64BitPortabilityProblems="FALSE"/>
+			<Tool
+				Name="VCCustomBuildTool"
+				Description="Performing registration"
+				CommandLine="regsvr32 /s /c &quot;$(TargetPath)&quot;
+echo regsvr32 exec. time &gt; &quot;$(OutDir)\regsvr32.trg&quot;
+"
+				Outputs="$(OutDir)\regsvr32.trg"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions=" /MACHINE:I386 "
+				AdditionalDependencies="odbc32.lib odbccp32.lib  Ws2_32.lib"
+				OutputFile=".\ReleaseMinDependency/PointTPoint.dll"
+				Version="1.0"
+				LinkIncremental="1"
+				SuppressStartupBanner="TRUE"
+				ModuleDefinitionFile=".\PointTPoint.def"
+				ProgramDatabaseFile=".\ReleaseMinDependency/PointTPoint.pdb"
+				SubSystem="2"
+				ImportLibrary=".\ReleaseMinDependency/PointTPoint.lib"/>
+			<Tool
+				Name="VCMIDLTool"
+				TypeLibraryName=".\ReleaseMinDependency/PointTPoint.tlb"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="NDEBUG"
+				Culture="1053"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+		</Configuration>
+	</Configurations>
+	<Files>
+		<Filter
+			Name="Source Files"
+			Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File
+				RelativePath=".\GateKeeper.cpp">
+			</File>
+			<File
+				RelativePath=".\Manager.cpp">
+			</File>
+			<File
+				RelativePath=".\PointTPoint.cpp">
+			</File>
+			<File
+				RelativePath=".\PointTPoint.def">
+			</File>
+			<File
+				RelativePath=".\PointTPoint.idl">
+				<FileConfiguration
+					Name="Unicode Release MinSize|Win32">
+					<Tool
+						Name="VCMIDLTool"
+						GenerateStublessProxies="TRUE"
+						TypeLibraryName=".\PointTPoint.tlb"
+						HeaderFileName="PointTPoint.h"
+						InterfaceIdentifierFileName="PointTPoint_i.c"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCMIDLTool"
+						GenerateStublessProxies="TRUE"
+						TypeLibraryName=".\PointTPoint.tlb"
+						HeaderFileName="PointTPoint.h"
+						InterfaceIdentifierFileName="PointTPoint_i.c"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release MinSize|Win32">
+					<Tool
+						Name="VCMIDLTool"
+						GenerateStublessProxies="TRUE"
+						TypeLibraryName=".\PointTPoint.tlb"
+						HeaderFileName="PointTPoint.h"
+						InterfaceIdentifierFileName="PointTPoint_i.c"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Unicode Release MinDependency|Win32">
+					<Tool
+						Name="VCMIDLTool"
+						GenerateStublessProxies="TRUE"
+						TypeLibraryName=".\PointTPoint.tlb"
+						HeaderFileName="PointTPoint.h"
+						InterfaceIdentifierFileName="PointTPoint_i.c"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Unicode Debug|Win32">
+					<Tool
+						Name="VCMIDLTool"
+						GenerateStublessProxies="TRUE"
+						TypeLibraryName=".\PointTPoint.tlb"
+						HeaderFileName="PointTPoint.h"
+						InterfaceIdentifierFileName="PointTPoint_i.c"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release MinDependency|Win32">
+					<Tool
+						Name="VCMIDLTool"
+						GenerateStublessProxies="TRUE"
+						TypeLibraryName=".\PointTPoint.tlb"
+						HeaderFileName="PointTPoint.h"
+						InterfaceIdentifierFileName="PointTPoint_i.c"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="PointTPoint.rc">
+			</File>
+			<File
+				RelativePath=".\StdAfx.cpp">
+				<FileConfiguration
+					Name="Unicode Release MinSize|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release MinSize|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Unicode Release MinDependency|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Unicode Debug|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release MinDependency|Win32">
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="ptp.cpp">
+				<FileConfiguration
+					Name="Debug|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release MinDependency|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+			</File>
+		</Filter>
+		<Filter
+			Name="Header Files"
+			Filter="h;hpp;hxx;hm;inl">
+			<File
+				RelativePath=".\GateKeeper.h">
+			</File>
+			<File
+				RelativePath=".\Manager.h">
+			</File>
+			<File
+				RelativePath=".\Resource.h">
+			</File>
+			<File
+				RelativePath=".\StdAfx.h">
+			</File>
+			<File
+				RelativePath="ptp.h">
+				<FileConfiguration
+					Name="Debug|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release MinDependency|Win32"
+					ExcludedFromBuild="TRUE">
+					<Tool
+						Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+			</File>
+		</Filter>
+		<Filter
+			Name="Resource Files"
+			Filter="ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe">
+			<File
+				RelativePath=".\GateKeeper.rgs">
+			</File>
+			<File
+				RelativePath=".\Manager.rgs">
+			</File>
+		</Filter>
+		<File
+			RelativePath="ptp.ini">
+			<FileConfiguration
+				Name="Release MinDependency|Win32"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCustomBuildTool"/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="ptp_startup_vms.com">
+			<FileConfiguration
+				Name="Release MinDependency|Win32"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCustomBuildTool"/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath="ptp_startup_vms.ini">
+			<FileConfiguration
+				Name="Release MinDependency|Win32"
+				ExcludedFromBuild="TRUE">
+				<Tool
+					Name="VCCustomBuildTool"/>
+			</FileConfiguration>
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

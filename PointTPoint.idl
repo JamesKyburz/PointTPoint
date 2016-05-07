@@ -1,0 +1,82 @@
+// PointTPoint.idl : IDL source for PointTPoint.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (PointTPoint.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+	[
+		object,
+		uuid(654DA45A-664A-491A-973D-A7868CCEEE3E),
+		dual,
+		helpstring("IManager Interface"),
+		pointer_default(unique)
+	]
+	interface IManager : IDispatch
+	{
+		[id(1), helpstring("method Connect")] HRESULT Connect([out,retval] long *rval);
+		[id(2), helpstring("method SendRequest")] HRESULT SendRequest([in] BSTR *buffer,[out,retval] long *rval);
+		[id(3), helpstring("method SendSafeRequest")] HRESULT SendSafeRequest([in] BSTR *buffer,[in] BSTR *path, [out,retval] long *rval);
+		[id(4), helpstring("method ReceiveRequest")] HRESULT ReceiveRequest([out] BSTR *buffer, [out,retval] long *rval);
+		[id(5), helpstring("method SendReply")] HRESULT SendReply([in] BSTR *buffer, [out,retval] long *rval);
+		[id(6), helpstring("method ReceiveReply")] HRESULT ReceiveReply([out] BSTR *buffer, [out,retval] long *rval);
+		[id(7), helpstring("method ParseFileHeader")] HRESULT ParseFileHeader([in] BSTR *filePath, [out,retval] long *rval);
+		[propput, id(8), helpstring("property Host")] HRESULT Host([in] BSTR newVal);
+		[propput, id(9), helpstring("property Port")] HRESULT Port([in] long newVal);
+		[propput, id(10), helpstring("property FailoverHost")] HRESULT FailoverHost([in] BSTR newVal);
+		[propput, id(11), helpstring("property FailoverPort")] HRESULT FailoverPort([in] long newVal);
+		[propput, id(12), helpstring("property Timeout")] HRESULT Timeout([in] long newVal);
+		[propget, id(13), helpstring("property Language")] HRESULT Language([out, retval] long *pVal);
+		[propput, id(13), helpstring("property Language")] HRESULT Language([in] long newVal);
+		[propget, id(14), helpstring("property ReceivedBuffer")] HRESULT ReceivedBuffer([out, retval] BSTR *pVal);
+		[propput, id(15), helpstring("property Script")] HRESULT Script([in] VARIANT_BOOL newVal);
+		[propget, id(16), helpstring("property HeaderSize")] HRESULT HeaderSize([out, retval] long *pVal);
+		[propget, id(17), helpstring("property Encrypt")] HRESULT Encrypt([out, retval] VARIANT_BOOL *pVal);
+		[propput, id(17), helpstring("property Encrypt")] HRESULT Encrypt([in] VARIANT_BOOL newVal);
+		[propget, id(18), helpstring("property BufferSize")] HRESULT BufferSize([out, retval] long *pVal);
+		[propput, id(19), helpstring("property Application")] HRESULT Application([in] BSTR newVal);
+	};
+	[
+		object,
+		uuid(A9B39848-4314-48BB-A941-A589DED8ACA5),
+		dual,
+		helpstring("IGateKeeper Interface"),
+		pointer_default(unique)
+	]
+	interface IGateKeeper : IDispatch
+	{
+		[id(1), helpstring("method Server")] HRESULT Server([in] BSTR *configLocation, [out,retval] long *rval);
+		[id(2), helpstring("method Shutdown")] HRESULT Shutdown([in] BSTR *configLocation, [out,retval] long *rval);
+        [propput, id(3), helpstring("property ShutdownTimeout")] HRESULT ShutdownTimeout([in] long newVal);
+
+	};
+
+[
+	uuid(1547AF63-50EC-44DD-8C8F-F05C64588877),
+	version(1.0),
+	helpstring("PointTPoint 1.0 Type Library")
+]
+
+library POINTTPOINTLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(8A163DF8-47BE-4EA0-B9F2-FBF8CE4DC2ED),
+		helpstring("Manager Class")
+	]
+	coclass Manager
+	{
+		[default] interface IManager;
+	};
+	[
+		uuid(384D7BBE-C3D2-4A95-ADFE-F47472F455B4),
+		helpstring("GateKeeper Class")
+	]
+	coclass GateKeeper
+	{
+		[default] interface IGateKeeper;
+	};
+};

@@ -1,0 +1,26 @@
+HKCR
+{
+	PointTPoint.GateKeeper.1 = s 'GateKeeper Class'
+	{
+		CLSID = s '{384D7BBE-C3D2-4A95-ADFE-F47472F455B4}'
+	}
+	PointTPoint.GateKeeper = s 'GateKeeper Class'
+	{
+		CLSID = s '{384D7BBE-C3D2-4A95-ADFE-F47472F455B4}'
+		CurVer = s 'PointTPoint.GateKeeper.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {384D7BBE-C3D2-4A95-ADFE-F47472F455B4} = s 'GateKeeper Class'
+		{
+			ProgID = s 'PointTPoint.GateKeeper.1'
+			VersionIndependentProgID = s 'PointTPoint.GateKeeper'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{1547AF63-50EC-44DD-8C8F-F05C64588877}'
+		}
+	}
+}

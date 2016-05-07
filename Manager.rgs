@@ -1,0 +1,27 @@
+HKCR
+{
+
+	PointTPoint.Manager.1 = s 'Manager Class'
+	{
+		CLSID = s '{8A163DF8-47BE-4EA0-B9F2-FBF8CE4DC2ED}'
+	}
+	PointTPoint.Manager = s 'Manager Class'
+	{
+		CLSID = s '{8A163DF8-47BE-4EA0-B9F2-FBF8CE4DC2ED}'
+		CurVer = s 'PointTPoint.Manager.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {8A163DF8-47BE-4EA0-B9F2-FBF8CE4DC2ED} = s 'Manager Class'
+		{
+			ProgID = s 'PointTPoint.Manager.1'
+			VersionIndependentProgID = s 'PointTPoint.Manager'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{1547AF63-50EC-44DD-8C8F-F05C64588877}'
+		}
+	}
+}
